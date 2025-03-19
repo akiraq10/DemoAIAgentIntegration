@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.obiscr.chatgpt.settings.EasyCodeState">
+    <option name="projectFiles" value="$PROJECT_DIR$/src/main/java/AI/chatGPT/AIHelper.java;C:/code/AIHelperDemo/src/main/java/AI/chatGPT/GenerateFeatureTest.java;C:/code/AIHelperDemo/src/main/java/AI/Gemini/FeatureGeneratorWithGemini.java;C:/code/AIHelperDemo/src/main/java/AI/Gemini/StepDefinitionGenerator.java;C:/code/AIHelperDemo/src/main/java/AI/AIHelper.java;C:/code/AIHelperDemo/src/main/java/CucucumberBDD/StepDefinition/Hooks.java;C:/code/AIHelperDemo/src/main/java/CucucumberBDD/StepDefinition/loginSDWeb.java;C:/code/AIHelperDemo/src/main/java/test.java;C:/code/AIHelperDemo/src/test/java/CucucumberBDD/Runner/TestRunner.java;C:/code/AIHelperDemo/README.md" />
+  </component>
+</project>

@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 
 public class AIHelper {
 
-        private static final String API_KEY = "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";  // Thay bằng OpenAI API key của bạn
+        private static final String API_KEY = "";  // Thay bằng OpenAI API key của bạn
         private static final String API_URL = "https://api.openai.com/v1/completions";
 
         public static void generateFeatureFile(String featureDescription, String filePath) throws IOException {

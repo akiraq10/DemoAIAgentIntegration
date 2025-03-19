@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
 public class StepDefinitionGenerator {
-    private static final String API_KEY = "AIzaSyDcZ9B5Tyh-bPPOwZtQckoRzRhaftpeDdA";
+    private static final String API_KEY = System.getenv("GEMINI_API_KEY");
     private static final String GEMINI_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent?key=" + API_KEY;
 
     public static String generateStepDefinitions(String featureText, String className, String packageName) throws IOException {

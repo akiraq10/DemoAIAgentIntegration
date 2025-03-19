@@ -11,6 +11,7 @@ import static AI.Gemini.StepDefinitionGenerator.generateStepDefinitions;
 
 public class AIHelper {
     public static void main(String[] args) {
+        // identify feature and test scripts file name for cucumber
         String className="loginSDWeb";
         String packageName="CucucumberBDD.StepDefinition";
         String featurePath="src/main/java/CucucumberBDD/Features/"+className+".feature";
@@ -18,7 +19,7 @@ public class AIHelper {
         String filePath = directoryPath + "/"+className+".java";
 
         //prompt request
-        String promptRequest="i using webdrivermanager with Firefox for Webdriver." +
+        String testScenario="i using webdrivermanager with Firefox for Webdriver, and i need the browser will be closed after test done" +
                 "i have website https://qavn.asia:444, it has login page with elements : " +
                 "the username field has attribute: id=UserName, " +
                 "password field has attribute:  id=Password, " +
@@ -26,11 +27,11 @@ public class AIHelper {
                 "i wanna to create a test case login with valid username=admin, password=1," +
                 "Expected: the 'https://qavn.asia:444/Folder/ViewFolder' displayed after 5s logging to website success "+
                 "create a test case login with invalid credentials " +
-                "Expected: The error message contain 'Login was unsuccessful' text is displayed." +
-                "I need to close Webdriver browser after done test";
+                "Expected: The error message contain 'Login was unsuccessful' text is displayed. " ;
+//                "I need to close Webdriver browser after test completed.";
 
         try {
-            String featureText = generateFeatureFile(promptRequest);
+            String featureText = generateFeatureFile(testScenario,className);
             FileWriter fileWriter = new FileWriter(featurePath);
             fileWriter.write(featureText);
             fileWriter.close();
@@ -41,7 +42,6 @@ public class AIHelper {
 
         try {
             // Step 1: Read the login.feature file
-            //String featureFilePath = "src/main/java/CucucumberBDD/Features/login.feature";
             String featureText = new String(Files.readAllBytes(Paths.get(featurePath)));
 
             // Step 2: Generate Step Definitions using Gemini
@@ -59,6 +59,7 @@ public class AIHelper {
             fileWriter.close();
 
             System.out.println("Step Definitions generated successfully at: " + new File(filePath).getAbsolutePath());
+
         } catch (IOException e) {
             e.printStackTrace();
         }
